@@ -1,0 +1,14 @@
+{
+	"name": "edh-divi-gutenberg-block-validator",
+	"private": true,
+	"description": "Checks converted markup with the block editor validator.",
+	"scripts": {
+		"validate": "node validate.js ../fixtures/*.blocks.html"
+	},
+	"devDependencies": {
+		"@wordpress/block-library": "^9.0.0",
+		"@wordpress/blocks": "^15.0.0",
+		"global-jsdom": "^26.0.0",
+		"jsdom": "^26.0.0"
+	}
+}

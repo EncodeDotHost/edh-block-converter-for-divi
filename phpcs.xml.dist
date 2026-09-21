@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset name="EDH Divi to Gutenberg">
+	<description>Coding standards for the plugin.</description>
+
+	<file>.</file>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/tests/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="."/>
+	<arg value="sp"/>
+
+	<config name="minimum_wp_version" value="6.6"/>
+	<config name="testVersion" value="7.4-"/>
+
+	<rule ref="WordPress-Extra"/>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="edh-divi-gutenberg"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="edh_dg"/>
+				<element value="EDH_DG"/>
+				<element value="EDH\DiviGutenberg"/>
+			</property>
+		</properties>
+	</rule>
+	<!-- The PHP DOM classes use camelCase property names. -->
+	<rule ref="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase">
+		<exclude-pattern>/includes/class-html-to-blocks\.php</exclude-pattern>
+	</rule>
+</ruleset>

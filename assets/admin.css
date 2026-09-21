@@ -1,0 +1,29 @@
+.edh-dg-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 16px 0 8px;
+}
+
+#edh-dg-progress {
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+.edh-dg-actions .button {
+	margin-right: 4px;
+}
+
+#edh-dg-preview {
+	margin-top: 24px;
+}
+
+#edh-dg-preview-report .edh-dg-unsupported,
+#edh-dg-preview-report .edh-dg-dropped {
+	color: #b32d2e;
+}
+
+#edh-dg-preview-report .edh-dg-downgraded {
+	color: #996800;
+}
