@@ -35,7 +35,7 @@ final class Gallery_Mapper extends Base_Mapper {
 					Report::DROPPED,
 					$node->tag,
 					/* translators: %d: attachment ID. */
-					sprintf( __( 'Gallery image %d is not in the media library. The converter removed it.', 'edh-divi-gutenberg' ), $id )
+					sprintf( __( 'Gallery image %d is not in the media library. The converter removed it.', 'edh-block-converter-for-divi' ), $id )
 				);
 				continue;
 			}
@@ -57,7 +57,7 @@ final class Gallery_Mapper extends Base_Mapper {
 		}
 
 		if ( $node->is_on( 'fullwidth' ) ) {
-			$this->downgraded( $node, $context, __( 'The gallery slider is now a gallery grid.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'The gallery slider is now a gallery grid.', 'edh-block-converter-for-divi' ) );
 		}
 
 		return array( Block_Factory::gallery( $images, $context->styles->identity( $node ) ) );

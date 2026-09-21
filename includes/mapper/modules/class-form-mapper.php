@@ -26,7 +26,7 @@ final class Form_Mapper extends Base_Mapper {
 	 * @return array
 	 */
 	public function convert( Node $node, Context $context ) {
-		$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Core blocks have no forms. Replace the placeholder with a form block from a form plugin.', 'edh-divi-gutenberg' ) );
+		$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Core blocks have no forms. Replace the placeholder with a form block from a form plugin.', 'edh-block-converter-for-divi' ) );
 
 		$blocks = array();
 		$title  = $this->inline( $node->attr( 'title' ) );
@@ -37,7 +37,7 @@ final class Form_Mapper extends Base_Mapper {
 		if ( ! empty( $context->options['keep_form_shortcodes'] ) && '' !== $node->raw ) {
 			$blocks[] = Block_Factory::shortcode( $node->raw );
 		} else {
-			$blocks[] = Block_Factory::paragraph( '<em>' . esc_html__( 'A Divi form was here. Add a form block at this position.', 'edh-divi-gutenberg' ) . '</em>' );
+			$blocks[] = Block_Factory::paragraph( '<em>' . esc_html__( 'A Divi form was here. Add a form block at this position.', 'edh-block-converter-for-divi' ) . '</em>' );
 		}
 
 		return $blocks;

@@ -19,7 +19,7 @@ use WP_REST_Server;
  */
 final class Rest_Controller {
 
-	const REST_NAMESPACE = 'edh-divi-gutenberg/v1';
+	const REST_NAMESPACE = 'edh-block-converter-for-divi/v1';
 
 	/**
 	 * Registers the routes.

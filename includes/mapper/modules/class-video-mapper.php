@@ -27,7 +27,7 @@ final class Video_Mapper extends Base_Mapper {
 	public function convert( Node $node, Context $context ) {
 		$items = 'et_pb_video_slider' === $node->tag ? $node->child_modules( array( 'et_pb_video_slider_item' ) ) : array( $node );
 		if ( 'et_pb_video_slider' === $node->tag ) {
-			$this->downgraded( $node, $context, __( 'The video slider is now a list of videos.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'The video slider is now a list of videos.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$blocks = array();

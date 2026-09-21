@@ -45,6 +45,7 @@ if ( ! function_exists( 'esc_url' ) ) {
 
 if ( ! function_exists( 'wp_strip_all_tags' ) ) {
 	function wp_strip_all_tags( $text ) {
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.strip_tags_strip_tags -- This is the stand-in for wp_strip_all_tags().
 		return trim( strip_tags( (string) $text ) );
 	}
 }

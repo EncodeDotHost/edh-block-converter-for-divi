@@ -44,11 +44,11 @@ final class Map_Mapper extends Base_Mapper {
 		}
 
 		if ( ! $blocks ) {
-			$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Core blocks have no map. The converter removed the map.', 'edh-divi-gutenberg' ) );
+			$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Core blocks have no map. The converter removed the map.', 'edh-block-converter-for-divi' ) );
 			return array();
 		}
 
-		$this->downgraded( $node, $context, __( 'Core blocks have no map. The converter kept the addresses and the pin text.', 'edh-divi-gutenberg' ) );
+		$this->downgraded( $node, $context, __( 'Core blocks have no map. The converter kept the addresses and the pin text.', 'edh-block-converter-for-divi' ) );
 
 		return $this->wrap( $node, $blocks, $context );
 	}

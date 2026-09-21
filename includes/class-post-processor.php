@@ -51,7 +51,7 @@ final class Post_Processor {
 	public function preview( $post_id, array $options = array() ) {
 		$post = get_post( $post_id );
 		if ( ! $post ) {
-			return new WP_Error( 'edh_dg_not_found', __( 'The post does not exist.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_not_found', __( 'The post does not exist.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$content = $this->backup->exists( $post->ID ) ? $this->backup->content( $post->ID ) : $post->post_content;
@@ -70,10 +70,10 @@ final class Post_Processor {
 	public function convert( $post_id, $force = false, array $options = array() ) {
 		$post = get_post( $post_id );
 		if ( ! $post ) {
-			return new WP_Error( 'edh_dg_not_found', __( 'The post does not exist.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_not_found', __( 'The post does not exist.', 'edh-block-converter-for-divi' ) );
 		}
 		if ( $this->is_converted( $post->ID ) && ! $force ) {
-			return new WP_Error( 'edh_dg_already_converted', __( 'The post is already converted. Use the force option to convert it again.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_already_converted', __( 'The post is already converted. Use the force option to convert it again.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$result = $this->preview( $post->ID, $options );
@@ -81,10 +81,10 @@ final class Post_Processor {
 			return $result;
 		}
 		if ( ! $result->has_divi ) {
-			return new WP_Error( 'edh_dg_no_divi', __( 'The post has no Divi 4 shortcodes.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_no_divi', __( 'The post has no Divi 4 shortcodes.', 'edh-block-converter-for-divi' ) );
 		}
 		if ( '' === $result->markup ) {
-			return new WP_Error( 'edh_dg_empty', __( 'The conversion gave no blocks. The post is not changed.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_empty', __( 'The conversion gave no blocks. The post is not changed.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$this->backup->store( $post );
@@ -117,7 +117,7 @@ final class Post_Processor {
 	 */
 	public function restore( $post_id ) {
 		if ( ! get_post( $post_id ) || ! $this->backup->exists( $post_id ) ) {
-			return new WP_Error( 'edh_dg_no_backup', __( 'The post has no backup.', 'edh-divi-gutenberg' ) );
+			return new WP_Error( 'edh_dg_no_backup', __( 'The post has no backup.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$written = $this->write_content( $post_id, $this->backup->content( $post_id ) );

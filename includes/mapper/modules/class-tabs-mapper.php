@@ -36,7 +36,7 @@ final class Tabs_Mapper extends Base_Mapper {
 		}
 
 		if ( $blocks ) {
-			$this->downgraded( $node, $context, __( 'Core blocks have no tabs. Each tab is now a heading with its content.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'Core blocks have no tabs. Each tab is now a heading with its content.', 'edh-block-converter-for-divi' ) );
 		}
 
 		return $this->wrap( $node, $blocks, $context );

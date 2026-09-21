@@ -58,7 +58,7 @@ final class Shop_Mapper extends Base_Mapper {
 			}
 		}
 
-		$this->downgraded( $node, $context, __( 'The shop module is now the WooCommerce products shortcode.', 'edh-divi-gutenberg' ) );
+		$this->downgraded( $node, $context, __( 'The shop module is now the WooCommerce products shortcode.', 'edh-block-converter-for-divi' ) );
 
 		return array( Block_Factory::shortcode( $shortcode . ']' ) );
 	}

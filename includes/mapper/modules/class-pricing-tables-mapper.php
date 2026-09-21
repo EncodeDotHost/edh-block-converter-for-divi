@@ -60,7 +60,7 @@ final class Pricing_Tables_Mapper extends Base_Mapper {
 			return array();
 		}
 
-		$this->downgraded( $node, $context, __( 'The pricing tables are now columns of simple blocks.', 'edh-divi-gutenberg' ) );
+		$this->downgraded( $node, $context, __( 'The pricing tables are now columns of simple blocks.', 'edh-block-converter-for-divi' ) );
 
 		if ( 1 === count( $tables ) ) {
 			return $this->wrap( $node, $tables[0], $context, true );

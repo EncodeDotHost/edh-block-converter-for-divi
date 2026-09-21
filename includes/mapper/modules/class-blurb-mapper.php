@@ -32,7 +32,7 @@ final class Blurb_Mapper extends Base_Mapper {
 		$blocks = array();
 
 		if ( $node->is_on( 'use_icon' ) ) {
-			$this->downgraded( $node, $context, __( 'Core blocks have no icon font. The converter removed the blurb icon.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'Core blocks have no icon font. The converter removed the blurb icon.', 'edh-block-converter-for-divi' ) );
 		} else {
 			$blocks[] = $this->image(
 				$node->attr( 'image' ),

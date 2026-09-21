@@ -47,7 +47,7 @@
 		const row = element( 'tr' );
 
 		const check = element( 'th', '', { scope: 'row', class: 'check-column' } );
-		const box = element( 'input', '', { type: 'checkbox', value: String( post.id ), 'aria-label': sprintf( /* translators: %s: post title. */ __( 'Select %s', 'edh-divi-gutenberg' ), post.title ) } );
+		const box = element( 'input', '', { type: 'checkbox', value: String( post.id ), 'aria-label': sprintf( /* translators: %s: post title. */ __( 'Select %s', 'edh-block-converter-for-divi' ), post.title ) } );
 		box.addEventListener( 'change', updateToolbar );
 		check.appendChild( box );
 		row.appendChild( check );
@@ -56,26 +56,26 @@
 		title.appendChild( element( 'a', post.title || '#' + post.id, { href: post.edit_url || '#' } ) );
 		if ( post.view_url ) {
 			title.appendChild( document.createTextNode( ' · ' ) );
-			title.appendChild( element( 'a', __( 'View', 'edh-divi-gutenberg' ), { href: post.view_url, target: '_blank', rel: 'noopener' } ) );
+			title.appendChild( element( 'a', __( 'View', 'edh-block-converter-for-divi' ), { href: post.view_url, target: '_blank', rel: 'noopener' } ) );
 		}
 		row.appendChild( title );
 
 		row.appendChild( element( 'td', post.type + ' (' + post.status + ')' ) );
 
-		let state = post.converted ? __( 'Converted', 'edh-divi-gutenberg' ) : __( 'Divi', 'edh-divi-gutenberg' );
+		let state = post.converted ? __( 'Converted', 'edh-block-converter-for-divi' ) : __( 'Divi', 'edh-block-converter-for-divi' );
 		if ( post.is_divi5 ) {
-			state = __( 'Divi 5 (not supported at this time)', 'edh-divi-gutenberg' );
+			state = __( 'Divi 5 (not supported at this time)', 'edh-block-converter-for-divi' );
 		}
 		row.appendChild( element( 'td', state ) );
 		row.appendChild( element( 'td', String( post.modules ) ) );
 		row.appendChild( element( 'td', post.unsupported.join( ', ' ) ) );
 
 		const actions = element( 'td', '', { class: 'edh-dg-actions' } );
-		actions.appendChild( actionButton( __( 'Preview', 'edh-divi-gutenberg' ), () => showPreview( post ) ) );
+		actions.appendChild( actionButton( __( 'Preview', 'edh-block-converter-for-divi' ), () => showPreview( post ) ) );
 		if ( post.converted ) {
-			actions.appendChild( actionButton( __( 'Restore', 'edh-divi-gutenberg' ), () => run( 'restore', [ post.id ] ) ) );
+			actions.appendChild( actionButton( __( 'Restore', 'edh-block-converter-for-divi' ), () => run( 'restore', [ post.id ] ) ) );
 		} else if ( ! post.is_divi5 ) {
-			actions.appendChild( actionButton( __( 'Convert', 'edh-divi-gutenberg' ), () => run( 'convert', [ post.id ] ) ) );
+			actions.appendChild( actionButton( __( 'Convert', 'edh-block-converter-for-divi' ), () => run( 'convert', [ post.id ] ) ) );
 		}
 		row.appendChild( actions );
 
@@ -88,7 +88,7 @@
 
 		if ( ! posts.length ) {
 			const row = element( 'tr' );
-			row.appendChild( element( 'td', __( 'No posts use the Divi builder.', 'edh-divi-gutenberg' ), { colspan: '7' } ) );
+			row.appendChild( element( 'td', __( 'No posts use the Divi builder.', 'edh-block-converter-for-divi' ), { colspan: '7' } ) );
 			rows.appendChild( row );
 		}
 		posts.forEach( ( post ) => rows.appendChild( renderRow( post ) ) );
@@ -96,7 +96,7 @@
 	}
 
 	async function scan() {
-		status.textContent = __( 'Scan in progress…', 'edh-divi-gutenberg' );
+		status.textContent = __( 'Scan in progress…', 'edh-block-converter-for-divi' );
 		posts = [];
 
 		try {
@@ -108,7 +108,7 @@
 				posts = posts.concat( data.posts );
 				page++;
 			} while ( posts.length < total && page < 200 );
-			status.textContent = sprintf( /* translators: %d: number of posts. */ __( 'Posts found: %d.', 'edh-divi-gutenberg' ), posts.length );
+			status.textContent = sprintf( /* translators: %d: number of posts. */ __( 'Posts found: %d.', 'edh-block-converter-for-divi' ), posts.length );
 		} catch ( error ) {
 			status.textContent = error.message;
 		}
@@ -116,17 +116,17 @@
 	}
 
 	async function showPreview( post ) {
-		status.textContent = __( 'Preview in progress…', 'edh-divi-gutenberg' );
+		status.textContent = __( 'Preview in progress…', 'edh-block-converter-for-divi' );
 		try {
 			const data = await apiFetch( { path: base + '/preview/' + post.id, method: 'POST' } );
 			const list = document.getElementById( 'edh-dg-preview-report' );
 
-			document.getElementById( 'edh-dg-preview-title' ).textContent = sprintf( /* translators: %s: post title. */ __( 'Preview: %s', 'edh-divi-gutenberg' ), post.title );
+			document.getElementById( 'edh-dg-preview-title' ).textContent = sprintf( /* translators: %s: post title. */ __( 'Preview: %s', 'edh-block-converter-for-divi' ), post.title );
 			document.getElementById( 'edh-dg-preview-markup' ).value = data.markup;
 			list.textContent = '';
 
 			if ( ! data.report.notices.length ) {
-				list.appendChild( element( 'li', __( 'No notices. All modules have an equivalent.', 'edh-divi-gutenberg' ) ) );
+				list.appendChild( element( 'li', __( 'No notices. All modules have an equivalent.', 'edh-block-converter-for-divi' ) ) );
 			}
 			data.report.notices.forEach( ( notice ) => {
 				list.appendChild( element( 'li', '[' + notice.level + '] ' + notice.tag + ': ' + notice.message, { class: 'edh-dg-' + notice.level } ) );
@@ -145,7 +145,7 @@
 		if ( busy || ! ids.length ) {
 			return;
 		}
-		if ( 'restore' === action && ! window.confirm( __( 'Restore the original Divi content of the selected posts?', 'edh-divi-gutenberg' ) ) ) { // eslint-disable-line no-alert
+		if ( 'restore' === action && ! window.confirm( __( 'Restore the original Divi content of the selected posts?', 'edh-block-converter-for-divi' ) ) ) { // eslint-disable-line no-alert
 			return;
 		}
 
@@ -168,7 +168,7 @@
 
 		busy = false;
 		progress.hidden = true;
-		status.textContent = errors.length ? errors.join( ' ' ) : __( 'Done.', 'edh-divi-gutenberg' );
+		status.textContent = errors.length ? errors.join( ' ' ) : __( 'Done.', 'edh-block-converter-for-divi' );
 		render();
 	}
 

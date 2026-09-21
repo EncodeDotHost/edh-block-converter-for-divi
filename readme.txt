@@ -1,10 +1,10 @@
-=== EDH Divi to Gutenberg ===
+=== EDH Block Converter for Divi ===
 Contributors: encodedothost
 Tags: divi, gutenberg, blocks, migration, converter
 Requires at least: 6.6
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,7 +43,7 @@ Shortcodes from other plugins go into shortcode blocks without changes.
 
 1. Make a database backup.
 2. Install and activate the plugin.
-3. Go to Tools > Divi to Gutenberg.
+3. Go to Tools > Block Converter for Divi.
 4. Use Preview to examine a post, then use Convert.
 
 == Frequently Asked Questions ==
@@ -65,6 +65,11 @@ No. The plugin keeps the modified date.
 The plugin puts the content of a global module into each post that uses it. It does not convert Theme Builder templates.
 
 == Changelog ==
+
+= 0.1.1 =
+* New name: EDH Block Converter for Divi. The slug, the text domain, the REST namespace, and the admin screen have the new name.
+* Fix: a section with a background image keeps the content width of the theme.
+* Tested up to WordPress 7.1.
 
 = 0.1.0 =
 * First version. Divi 4 shortcodes to core blocks, admin screen, REST routes, and WP-CLI commands.

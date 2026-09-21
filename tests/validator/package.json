@@ -1,5 +1,5 @@
 {
-	"name": "edh-divi-gutenberg-block-validator",
+	"name": "edh-block-converter-for-divi-block-validator",
 	"private": true,
 	"description": "Checks converted markup with the block editor validator.",
 	"scripts": {

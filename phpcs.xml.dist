@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="EDH Divi to Gutenberg">
+<ruleset name="EDH Block Converter for Divi">
 	<description>Coding standards for the plugin.</description>
 
 	<file>.</file>
@@ -20,7 +20,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="edh-divi-gutenberg"/>
+				<element value="edh-block-converter-for-divi"/>
 			</property>
 		</properties>
 	</rule>

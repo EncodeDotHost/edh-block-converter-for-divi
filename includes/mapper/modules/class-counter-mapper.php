@@ -56,7 +56,7 @@ final class Counter_Mapper extends Base_Mapper {
 		}
 
 		if ( $blocks ) {
-			$this->downgraded( $node, $context, __( 'Core blocks have no animated counter. The value is now static text.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'Core blocks have no animated counter. The value is now static text.', 'edh-block-converter-for-divi' ) );
 		}
 
 		return $this->wrap( $node, $blocks, $context );

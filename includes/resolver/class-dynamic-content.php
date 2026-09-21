@@ -65,7 +65,7 @@ final class Dynamic_Content {
 						Report::DROPPED,
 						'dynamic-content',
 						/* translators: %s: name of the Divi dynamic content field. */
-						sprintf( __( 'Dynamic content field "%s" has no equivalent. The converter removed it.', 'edh-divi-gutenberg' ), $data['content'] )
+						sprintf( __( 'Dynamic content field "%s" has no equivalent. The converter removed it.', 'edh-block-converter-for-divi' ), $data['content'] )
 					);
 					return '';
 				}
@@ -74,7 +74,7 @@ final class Dynamic_Content {
 					Report::DOWNGRADED,
 					'dynamic-content',
 					/* translators: %s: name of the Divi dynamic content field. */
-					sprintf( __( 'Dynamic content field "%s" is now static text.', 'edh-divi-gutenberg' ), $data['content'] )
+					sprintf( __( 'Dynamic content field "%s" is now static text.', 'edh-block-converter-for-divi' ), $data['content'] )
 				);
 
 				$before = isset( $settings['before'] ) ? (string) $settings['before'] : '';

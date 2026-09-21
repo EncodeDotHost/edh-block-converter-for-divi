@@ -32,16 +32,16 @@ final class Post_Element_Mapper extends Base_Mapper {
 					Block_Factory::dynamic(
 						'core/search',
 						array(
-							'label'       => __( 'Search', 'edh-divi-gutenberg' ),
+							'label'       => __( 'Search', 'edh-block-converter-for-divi' ),
 							'showLabel'   => false,
 							'placeholder' => $node->attr( 'placeholder' ),
-							'buttonText'  => __( 'Search', 'edh-divi-gutenberg' ),
+							'buttonText'  => __( 'Search', 'edh-block-converter-for-divi' ),
 						)
 					),
 				);
 
 			case 'et_pb_login':
-				$this->downgraded( $node, $context, __( 'The login module is now a login/out block. The title and the text are not kept.', 'edh-divi-gutenberg' ) );
+				$this->downgraded( $node, $context, __( 'The login module is now a login/out block. The title and the text are not kept.', 'edh-block-converter-for-divi' ) );
 				return array( Block_Factory::dynamic( 'core/loginout', array( 'displayLoginAsForm' => true ) ) );
 
 			case 'et_pb_post_title':
@@ -70,11 +70,11 @@ final class Post_Element_Mapper extends Base_Mapper {
 
 			case 'et_pb_menu':
 			case 'et_pb_fullwidth_menu':
-				$context->report->add( Report::INFO, $node->tag, __( 'The menu is now a navigation block. Select the menu in the block editor.', 'edh-divi-gutenberg' ) );
+				$context->report->add( Report::INFO, $node->tag, __( 'The menu is now a navigation block. Select the menu in the block editor.', 'edh-block-converter-for-divi' ) );
 				return array( Block_Factory::dynamic( 'core/navigation' ) );
 		}
 
-		$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Widget areas have no block equivalent in post content. The converter removed the module.', 'edh-divi-gutenberg' ) );
+		$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'Widget areas have no block equivalent in post content. The converter removed the module.', 'edh-block-converter-for-divi' ) );
 		return array();
 	}
 

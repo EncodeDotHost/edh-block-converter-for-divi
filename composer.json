@@ -1,5 +1,5 @@
 {
-	"name": "encodedothost/edh-divi-gutenberg",
+	"name": "encodedothost/edh-block-converter-for-divi",
 	"description": "Converts Divi page-builder content to native Gutenberg core blocks.",
 	"type": "wordpress-plugin",
 	"license": "GPL-3.0-or-later",

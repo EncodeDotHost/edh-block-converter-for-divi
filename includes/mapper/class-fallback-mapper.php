@@ -32,9 +32,9 @@ final class Fallback_Mapper extends Base_Mapper {
 		}
 
 		if ( $blocks ) {
-			$context->report->add( Report::DOWNGRADED, $node->tag, __( 'The module has no equivalent. The converter kept only its text content.', 'edh-divi-gutenberg' ) );
+			$context->report->add( Report::DOWNGRADED, $node->tag, __( 'The module has no equivalent. The converter kept only its text content.', 'edh-block-converter-for-divi' ) );
 		} else {
-			$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'The module has no equivalent and no text content. The converter removed it.', 'edh-divi-gutenberg' ) );
+			$context->report->add( Report::UNSUPPORTED, $node->tag, __( 'The module has no equivalent and no text content. The converter removed it.', 'edh-block-converter-for-divi' ) );
 		}
 
 		return $blocks;

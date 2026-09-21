@@ -30,7 +30,7 @@ final class Query_Mapper extends Base_Mapper {
 		$post_type  = $is_project ? 'project' : $node->attr( 'post_type', 'post' );
 
 		if ( $is_slider || 'et_pb_filterable_portfolio' === $node->tag ) {
-			$this->downgraded( $node, $context, __( 'The module is now a query loop. The slider or filter function is not kept.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'The module is now a query loop. The slider or filter function is not kept.', 'edh-block-converter-for-divi' ) );
 		}
 
 		$query = array(
@@ -42,7 +42,7 @@ final class Query_Mapper extends Base_Mapper {
 			'orderBy'  => 'date',
 			'author'   => '',
 			'search'   => '',
-			'exclude'  => array(),
+			'exclude'  => array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Attribute of the core query block, not a database query.
 			'sticky'   => '',
 			'inherit'  => $node->is_on( 'use_current_loop' ),
 		);

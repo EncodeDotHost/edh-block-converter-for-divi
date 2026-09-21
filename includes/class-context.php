@@ -174,7 +174,7 @@ final class Context {
 		}
 
 		if ( $this->is_disabled( $node ) ) {
-			$this->report->add( Report::DROPPED, $node->tag, __( 'The module is disabled in Divi. The converter removed it.', 'edh-divi-gutenberg' ) );
+			$this->report->add( Report::DROPPED, $node->tag, __( 'The module is disabled in Divi. The converter removed it.', 'edh-block-converter-for-divi' ) );
 			return array();
 		}
 
@@ -232,7 +232,7 @@ final class Context {
 				Report::INFO,
 				$node->tag,
 				/* translators: %d: Divi Library post ID. */
-				sprintf( __( 'Global module %d is not in the Divi Library. The converter used the local copy.', 'edh-divi-gutenberg' ), $global_id )
+				sprintf( __( 'Global module %d is not in the Divi Library. The converter used the local copy.', 'edh-block-converter-for-divi' ), $global_id )
 			);
 			return null;
 		}

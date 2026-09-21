@@ -70,7 +70,7 @@ final class Slider_Mapper extends Base_Mapper {
 		}
 
 		if ( $blocks ) {
-			$this->downgraded( $node, $context, __( 'Core blocks have no slider. Each slide is now a separate block.', 'edh-divi-gutenberg' ) );
+			$this->downgraded( $node, $context, __( 'Core blocks have no slider. Each slide is now a separate block.', 'edh-block-converter-for-divi' ) );
 		}
 
 		return $blocks;
