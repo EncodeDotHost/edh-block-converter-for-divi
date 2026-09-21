@@ -64,6 +64,11 @@ final class Section_Mapper extends Base_Mapper {
 
 		$image = $node->attr( 'background_image' );
 		if ( '' !== $image ) {
+			// A cover has no content width limit, thus an inner group supplies it.
+			if ( ! $node->is_on( 'fullwidth' ) ) {
+				$inner = array( Block_Factory::group( $inner, array( 'layout' => array( 'type' => 'constrained' ) ) ) );
+			}
+
 			return array(
 				Block_Factory::cover(
 					$inner,
